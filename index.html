@@ -70,24 +70,14 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: .7rem;
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: .03em;
+      min-width: 7.4rem;
     }
-    .brand-mark {
-      width: 1.9rem;
-      height: 1.9rem;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(255,255,255,.72);
-      border-radius: 50%;
-      color: #ffd8cf;
-      font-family: var(--sans);
-      font-size: .7rem;
-      letter-spacing: 0;
+    .brand-logo {
+      width: 7.4rem;
+      height: auto;
+      filter: drop-shadow(0 5px 16px rgba(0,0,0,.22));
     }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .nav-links { display: none; align-items: center; gap: 1.4rem; }
     .nav-links a { text-decoration: none; font-size: .86rem; }
     .nav-links a:hover { color: #ffd8cf; }
@@ -103,15 +93,15 @@
     .hero-media::before,
     .hero-media::after { position: absolute; inset: 0; }
     .hero-media {
-      background-image: url("assets/hero-concept.png");
+      background-image: url("assets/real/hondo-hero-mobile.webp");
       background-size: cover;
-      background-position: 61% center;
+      background-position: center 44%;
       transform: scale(1.01);
     }
     .hero-media::before {
       content: "";
-      background: linear-gradient(90deg, rgba(10,8,7,.96) 0%, rgba(10,8,7,.78) 44%, rgba(10,8,7,.18) 82%),
-                  linear-gradient(0deg, rgba(10,8,7,.62) 0%, transparent 48%);
+      background: linear-gradient(90deg, rgba(10,8,7,.88) 0%, rgba(10,8,7,.62) 47%, rgba(10,8,7,.08) 84%),
+                  linear-gradient(0deg, rgba(10,8,7,.72) 0%, transparent 54%);
     }
     .hero-media::after {
       content: "";
@@ -186,21 +176,6 @@
       font-size: .82rem;
     }
     .hero-meta a { text-underline-offset: 3px; }
-    .image-note {
-      position: absolute;
-      right: 1rem;
-      bottom: 1rem;
-      z-index: 3;
-      padding: .42rem .62rem;
-      border: 1px solid rgba(255,255,255,.24);
-      border-radius: 999px;
-      background: rgba(12,10,9,.68);
-      color: rgba(255,255,255,.74);
-      font-size: .64rem;
-      letter-spacing: .06em;
-      backdrop-filter: blur(8px);
-    }
-
     .quick-strip {
       position: relative;
       z-index: 4;
@@ -257,35 +232,53 @@
 
     .highlights { display: grid; gap: 1rem; }
     .highlight-card {
-      min-height: 22rem;
+      min-height: 30rem;
       position: relative;
       overflow: hidden;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
       border-radius: 1rem;
       background: var(--ink-soft);
       color: #fff;
+      box-shadow: 0 22px 55px rgba(42,27,20,.14);
     }
-    .highlight-card::before,
-    .highlight-card::after { content: ""; position: absolute; border-radius: 50%; }
-    .highlight-card::before { width: 15rem; height: 15rem; right: -4rem; top: -4rem; border: 1px solid rgba(255,255,255,.14); }
-    .highlight-card::after { width: 8rem; height: 8rem; right: 1rem; top: 1rem; background: rgba(200,70,50,.12); }
-    .highlight-card:nth-child(2) { background: #754033; }
-    .highlight-card:nth-child(3) { background: #59604f; }
-    .dish-symbol {
+    .highlight-card::after {
+      content: "";
       position: absolute;
-      top: 1.4rem;
-      right: 1.5rem;
-      color: rgba(255,255,255,.35);
-      font-family: var(--serif);
-      font-size: 4.8rem;
-      line-height: 1;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(12,9,8,.96) 0%, rgba(12,9,8,.68) 36%, rgba(12,9,8,.05) 76%);
     }
-    .card-no { margin-bottom: auto; color: rgba(255,255,255,.55); font-size: .7rem; letter-spacing: .15em; }
+    .highlight-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+    .highlight-card:hover .highlight-image { transform: scale(1.025); }
+    .highlight-card:nth-child(1) .highlight-image { object-position: 56% center; }
+    .highlight-card:nth-child(2) .highlight-image { object-position: 48% center; }
+    .highlight-card:nth-child(3) .highlight-image { object-position: 52% center; }
+    .highlight-content { position: absolute; z-index: 2; inset: auto 0 0; padding: 1.5rem; }
+    .card-no { display: block; margin-bottom: 1rem; color: rgba(255,255,255,.66); font-size: .7rem; letter-spacing: .15em; }
     .highlight-card h3 { margin-bottom: .55rem; font-family: var(--serif); font-size: 2rem; font-weight: 400; }
     .highlight-card p { margin-bottom: 0; color: rgba(255,255,255,.72); font-size: .9rem; }
+
+    .brand-ribbon {
+      background: var(--red);
+      color: #fff;
+      padding: 1.2rem 1rem;
+    }
+    .brand-ribbon-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+      align-items: center;
+      text-align: center;
+    }
+    .brand-ribbon img { width: 7.2rem; margin: 0 auto; }
+    .brand-ribbon strong { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; }
+    .brand-ribbon span { font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; opacity: .82; }
 
     .menu-section { background: #171311; color: #fff; }
     .menu-section .kicker { color: #f3a897; }
@@ -304,36 +297,32 @@
     .menu-action { margin-top: 2rem; }
 
     .story-grid { display: grid; gap: 2.25rem; align-items: center; }
-    .story-mark {
+    .story-media {
       aspect-ratio: 1 / .8;
       position: relative;
       overflow: hidden;
       border-radius: 1rem;
-      background:
-        radial-gradient(circle at 30% 32%, rgba(223,92,67,.95) 0 5rem, transparent 5.1rem),
-        linear-gradient(135deg, #2b2622, #171311);
+      background: #1a1512;
+      box-shadow: 0 28px 70px rgba(42,27,20,.18);
     }
-    .story-mark::before {
-      content: "HONDO";
-      position: absolute;
-      left: 1.2rem;
-      bottom: .6rem;
-      color: rgba(255,255,255,.08);
-      font-family: var(--serif);
-      font-size: clamp(4rem, 16vw, 10rem);
-      letter-spacing: -.06em;
-      white-space: nowrap;
+    .story-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
-    .story-mark::after {
-      content: "寿司";
+    .story-label {
       position: absolute;
-      right: 1.6rem;
-      top: 1.2rem;
-      color: #f4efe6;
-      font-family: var(--serif);
-      font-size: 2rem;
-      writing-mode: vertical-rl;
-      letter-spacing: .2em;
+      left: 1rem;
+      bottom: 1rem;
+      padding: .5rem .7rem;
+      border-radius: 999px;
+      background: rgba(15,13,12,.78);
+      color: rgba(255,255,255,.88);
+      font-size: .68rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
     }
     .story-copy h2 { margin-bottom: 1.35rem; }
     .story-copy p { color: #5f554e; }
@@ -391,13 +380,15 @@
       .highlights { grid-template-columns: repeat(3, 1fr); }
       .highlight-card:nth-child(2) { transform: translateY(1.5rem); }
       .visit-grid { grid-template-columns: 1fr 1fr; }
+      .brand-ribbon-inner { grid-template-columns: auto 1fr auto; text-align: left; }
+      .brand-ribbon img { margin: 0; }
     }
 
     @media (min-width: 860px) {
       .nav-links { display: flex; }
       .hero, .hero-inner { min-height: 820px; }
       .hero-inner { align-items: center; padding-top: 11rem; padding-bottom: 5rem; }
-      .hero-media { background-position: center; }
+      .hero-media { background-image: url("assets/real/hondo-hero-desktop.webp"); background-position: center; }
       .section { padding-top: 8rem; padding-bottom: 8rem; }
       .section-head { grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr); align-items: end; }
       .menu-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; }
@@ -412,9 +403,14 @@
       .hero-media::before {
         background: linear-gradient(0deg, rgba(10,8,7,.93) 0%, rgba(10,8,7,.58) 58%, rgba(10,8,7,.28) 100%);
       }
-      .hero-media { background-position: 67% center; }
+      .hero-media { background-position: center 44%; }
       .hero-copy { width: 100%; }
-      .image-note { display: none; }
+    }
+
+    @media (max-width: 420px) {
+      .concept-bar { padding: .45rem .3rem; font-size: .58rem; letter-spacing: .075em; white-space: nowrap; }
+      .site-header { top: 1.65rem; }
+      .brand-logo { width: 7rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -453,8 +449,7 @@
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="Hondo Sushi concept preview home">
-        <span class="brand-mark">HS</span>
-        Hondo Sushi
+        <img class="brand-logo" src="assets/real/hondo-logo.png" alt="Hondo Sushi">
       </a>
       <div class="nav-links">
         <a href="#menu">Menu highlights</a>
@@ -467,7 +462,7 @@
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" role="img" aria-label="Original concept image of Japanese sushi, ramen and tea in a warm dining setting"></div>
+      <div class="hero-media" role="img" aria-label="Sushi photographed for Hondo Sushi's official website"></div>
       <div class="hero-inner">
         <div class="hero-copy">
           <p class="eyebrow">Japanese restaurant · central Bath</p>
@@ -483,7 +478,6 @@
           </div>
         </div>
       </div>
-      <span class="image-note">Concept imagery for preview only</span>
     </section>
 
     <div class="quick-strip" aria-label="Quick actions">
@@ -512,26 +506,40 @@
         </div>
         <div class="highlights">
           <article class="highlight-card">
-            <span class="dish-symbol" aria-hidden="true">○</span>
-            <span class="card-no">01 · HAND-MADE</span>
-            <h3>Sushi</h3>
-            <p>Nigiri, maki and more, with the full current selection available through Hondo's official menu.</p>
+            <img class="highlight-image" src="assets/real/hondo-sushi.webp" alt="Sushi platter photographed for Hondo Sushi" loading="lazy" width="1600" height="1067">
+            <div class="highlight-content">
+              <span class="card-no">01 · HAND-MADE</span>
+              <h3>Sushi</h3>
+              <p>Nigiri, maki and more, with the full current selection available through Hondo's official menu.</p>
+            </div>
           </article>
           <article class="highlight-card">
-            <span class="dish-symbol" aria-hidden="true">◡</span>
-            <span class="card-no">02 · WARMING</span>
-            <h3>Ramen</h3>
-            <p>A comforting hot-food choice alongside the restaurant's wider sushi menu.</p>
+            <img class="highlight-image" src="assets/real/hondo-ramen.webp" alt="Chashu ramen based on Hondo Sushi's published menu photograph" loading="lazy" width="1536" height="1024">
+            <div class="highlight-content">
+              <span class="card-no">02 · WARMING</span>
+              <h3>Ramen</h3>
+              <p>A comforting hot-food choice alongside the restaurant's wider sushi menu.</p>
+            </div>
           </article>
           <article class="highlight-card">
-            <span class="dish-symbol" aria-hidden="true">□</span>
-            <span class="card-no">03 · COMPLETE</span>
-            <h3>Donburi &amp; bento</h3>
-            <p>Rice bowls and bento boxes for a straightforward lunch or relaxed evening meal.</p>
+            <img class="highlight-image" src="assets/real/hondo-bento.webp" alt="Salmon bento photographed for Hondo Sushi" loading="lazy" width="1600" height="1067">
+            <div class="highlight-content">
+              <span class="card-no">03 · COMPLETE</span>
+              <h3>Donburi &amp; bento</h3>
+              <p>Rice bowls and bento boxes for a straightforward lunch or relaxed evening meal.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
+
+    <aside class="brand-ribbon" aria-label="Hondo Sushi at a glance">
+      <div class="brand-ribbon-inner">
+        <img src="assets/real/hondo-logo.png" alt="" width="208" height="97">
+        <strong>Hand-made sushi · Ramen · Donburi · Bento</strong>
+        <span>8–9 St James's Parade · Bath</span>
+      </div>
+    </aside>
 
     <section class="section menu-section" id="menu" aria-labelledby="menu-title">
       <div class="wrap">
@@ -556,10 +564,13 @@
 
     <section class="section" id="about" aria-labelledby="about-title">
       <div class="wrap story-grid">
-        <div class="story-mark" aria-hidden="true"></div>
+        <figure class="story-media">
+          <img src="assets/real/hondo-interior.webp" alt="The dining room at Hondo Sushi in Bath" loading="lazy" width="1460" height="1095">
+          <figcaption class="story-label">Hondo Sushi · Bath</figcaption>
+        </figure>
         <div class="story-copy">
           <p class="kicker">Hondo in Bath</p>
-          <h2 id="about-title">Sushi and hot dishes, under one roof.</h2>
+          <h2 id="about-title">Sushi, hot dishes and a place to settle in.</h2>
           <p>Hondo Sushi is a Japanese restaurant in central Bath, serving hand-made sushi alongside donburi, bento boxes and ramen.</p>
           <p>This concept keeps the experience simple: see the current menu, call the restaurant, or find the door — without hunting through different pages.</p>
           <div class="fact-line">
@@ -610,7 +621,7 @@
           <a href="mailto:info@hondosushi.co.uk">Email</a>
         </div>
       </div>
-      <div class="disclosure">Concept preview created for demonstration purposes. This is not Hondo Sushi's official website. The hero visual is original concept imagery, not a photograph of Hondo Sushi's food or premises. Business details are based on public information and should be confirmed by the restaurant before any official use.</div>
+      <div class="disclosure">Concept website preview for Hondo Sushi. This is not the restaurant's official website. Food, interior and brand imagery is drawn from Hondo Sushi's current official website and lightly refined for this presentation. Business details should be confirmed by the restaurant before official use.</div>
     </div>
   </footer>
 
