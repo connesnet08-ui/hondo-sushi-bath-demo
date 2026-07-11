@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Concept preview for Hondo Sushi in Bath — a clearer mobile route to the menu, table enquiries and directions.">
+  <meta name="theme-color" content="#171311">
+  <title>Hondo Sushi Bath — Concept Preview</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23171311%22/><circle cx=%2250%22 cy=%2250%22 r=%2227%22 fill=%22none%22 stroke=%22%23d9563f%22 stroke-width=%226%22/><path d=%22M34 50h32M50 34v32%22 stroke=%22%23f5efe5%22 stroke-width=%226%22 stroke-linecap=%22round%22/></svg>">
+  <style>
+    :root {
+      --ink: #171311;
+      --ink-soft: #28211d;
+      --paper: #f4efe6;
+      --paper-deep: #e8dece;
+      --red: #c84632;
+      --red-bright: #df5c43;
+      --sage: #9eaa8c;
+      --line: rgba(23, 19, 17, .15);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { display: block; width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid #f6b8aa; outline-offset: 4px; }
+
+    .concept-bar {
+      padding: .55rem 1rem;
+      background: #0f0d0c;
+      color: #d8cfc3;
+      font-size: .72rem;
+      letter-spacing: .11em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .site-header {
+      position: absolute;
+      z-index: 5;
+      top: 2.3rem;
+      left: 0;
+      width: 100%;
+      color: #fff;
+    }
+    .nav {
+      width: min(calc(100% - 2rem), var(--max));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.28);
+    }
+    .brand {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+    .brand-mark {
+      width: 1.9rem;
+      height: 1.9rem;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 50%;
+      color: #ffd8cf;
+      font-family: var(--sans);
+      font-size: .7rem;
+      letter-spacing: 0;
+    }
+    .nav-links { display: none; align-items: center; gap: 1.4rem; }
+    .nav-links a { text-decoration: none; font-size: .86rem; }
+    .nav-links a:hover { color: #ffd8cf; }
+
+    .hero {
+      min-height: 760px;
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      color: #fff;
+    }
+    .hero-media,
+    .hero-media::before,
+    .hero-media::after { position: absolute; inset: 0; }
+    .hero-media {
+      background-image: url("assets/hero-concept.png");
+      background-size: cover;
+      background-position: 61% center;
+      transform: scale(1.01);
+    }
+    .hero-media::before {
+      content: "";
+      background: linear-gradient(90deg, rgba(10,8,7,.96) 0%, rgba(10,8,7,.78) 44%, rgba(10,8,7,.18) 82%),
+                  linear-gradient(0deg, rgba(10,8,7,.62) 0%, transparent 48%);
+    }
+    .hero-media::after {
+      content: "";
+      background: radial-gradient(circle at 12% 72%, rgba(200,70,50,.23), transparent 29%);
+      mix-blend-mode: screen;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2rem), var(--max));
+      min-height: 760px;
+      margin: 0 auto;
+      padding: 10.5rem 0 5rem;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero-copy { max-width: 42rem; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin: 0 0 1.15rem;
+      color: #f3b9ad;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 2.6rem; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 9ch;
+      margin-bottom: 1.25rem;
+      font-family: var(--serif);
+      font-size: clamp(3.55rem, 11vw, 7.5rem);
+      font-weight: 400;
+      line-height: .88;
+      letter-spacing: -.055em;
+    }
+    .hero-lede {
+      max-width: 36rem;
+      margin-bottom: 1.75rem;
+      color: rgba(255,255,255,.8);
+      font-size: clamp(1rem, 2.2vw, 1.18rem);
+    }
+    .actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .btn {
+      min-height: 3.2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      padding: .85rem 1.2rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 750;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--red-bright); color: #fff; }
+    .btn-primary:hover { background: #ef6b51; }
+    .btn-ghost { border-color: rgba(255,255,255,.42); color: #fff; background: rgba(0,0,0,.12); }
+    .btn-ghost:hover { border-color: #fff; }
+    .hero-meta {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .6rem;
+      color: rgba(255,255,255,.68);
+      font-size: .82rem;
+    }
+    .hero-meta a { text-underline-offset: 3px; }
+    .image-note {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 3;
+      padding: .42rem .62rem;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      background: rgba(12,10,9,.68);
+      color: rgba(255,255,255,.74);
+      font-size: .64rem;
+      letter-spacing: .06em;
+      backdrop-filter: blur(8px);
+    }
+
+    .quick-strip {
+      position: relative;
+      z-index: 4;
+      width: min(calc(100% - 2rem), 980px);
+      margin: -2.25rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #fffaf3;
+      box-shadow: 0 22px 60px rgba(42,27,20,.16);
+    }
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .quick-item:last-child { border-bottom: 0; }
+    .quick-icon {
+      flex: 0 0 2.1rem;
+      width: 2.1rem;
+      height: 2.1rem;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--paper-deep);
+      color: var(--red);
+      font-weight: 800;
+    }
+    .quick-item small { display: block; color: #7c7169; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+    .quick-item strong { display: block; font-size: .86rem; }
+
+    .section { padding: 5.5rem 1rem; }
+    .wrap { width: min(100%, var(--max)); margin: 0 auto; }
+    .section-head {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+    .kicker { color: var(--red); font-size: .7rem; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
+    h2 {
+      max-width: 14ch;
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.35rem, 6vw, 4.8rem);
+      font-weight: 400;
+      line-height: .98;
+      letter-spacing: -.04em;
+    }
+    .section-intro { max-width: 34rem; margin: 0; color: #655b54; }
+
+    .highlights { display: grid; gap: 1rem; }
+    .highlight-card {
+      min-height: 22rem;
+      position: relative;
+      overflow: hidden;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border-radius: 1rem;
+      background: var(--ink-soft);
+      color: #fff;
+    }
+    .highlight-card::before,
+    .highlight-card::after { content: ""; position: absolute; border-radius: 50%; }
+    .highlight-card::before { width: 15rem; height: 15rem; right: -4rem; top: -4rem; border: 1px solid rgba(255,255,255,.14); }
+    .highlight-card::after { width: 8rem; height: 8rem; right: 1rem; top: 1rem; background: rgba(200,70,50,.12); }
+    .highlight-card:nth-child(2) { background: #754033; }
+    .highlight-card:nth-child(3) { background: #59604f; }
+    .dish-symbol {
+      position: absolute;
+      top: 1.4rem;
+      right: 1.5rem;
+      color: rgba(255,255,255,.35);
+      font-family: var(--serif);
+      font-size: 4.8rem;
+      line-height: 1;
+    }
+    .card-no { margin-bottom: auto; color: rgba(255,255,255,.55); font-size: .7rem; letter-spacing: .15em; }
+    .highlight-card h3 { margin-bottom: .55rem; font-family: var(--serif); font-size: 2rem; font-weight: 400; }
+    .highlight-card p { margin-bottom: 0; color: rgba(255,255,255,.72); font-size: .9rem; }
+
+    .menu-section { background: #171311; color: #fff; }
+    .menu-section .kicker { color: #f3a897; }
+    .menu-section .section-intro { color: rgba(255,255,255,.62); }
+    .menu-list { border-top: 1px solid rgba(255,255,255,.16); }
+    .menu-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .menu-row span { color: #df8f7e; font-size: .72rem; letter-spacing: .1em; }
+    .menu-row h3 { margin: 0 0 .2rem; font-family: var(--serif); font-size: 1.45rem; font-weight: 400; }
+    .menu-row p { margin: 0; color: rgba(255,255,255,.55); font-size: .78rem; }
+    .menu-action { margin-top: 2rem; }
+
+    .story-grid { display: grid; gap: 2.25rem; align-items: center; }
+    .story-mark {
+      aspect-ratio: 1 / .8;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+      background:
+        radial-gradient(circle at 30% 32%, rgba(223,92,67,.95) 0 5rem, transparent 5.1rem),
+        linear-gradient(135deg, #2b2622, #171311);
+    }
+    .story-mark::before {
+      content: "HONDO";
+      position: absolute;
+      left: 1.2rem;
+      bottom: .6rem;
+      color: rgba(255,255,255,.08);
+      font-family: var(--serif);
+      font-size: clamp(4rem, 16vw, 10rem);
+      letter-spacing: -.06em;
+      white-space: nowrap;
+    }
+    .story-mark::after {
+      content: "寿司";
+      position: absolute;
+      right: 1.6rem;
+      top: 1.2rem;
+      color: #f4efe6;
+      font-family: var(--serif);
+      font-size: 2rem;
+      writing-mode: vertical-rl;
+      letter-spacing: .2em;
+    }
+    .story-copy h2 { margin-bottom: 1.35rem; }
+    .story-copy p { color: #5f554e; }
+    .story-copy .fact-line { display: grid; gap: .8rem; margin-top: 1.6rem; }
+    .fact { padding-top: .85rem; border-top: 1px solid var(--line); font-size: .88rem; }
+
+    .visit { padding-bottom: 7.5rem; background: #d7cab9; }
+    .visit-grid { display: grid; gap: 1rem; }
+    .visit-card {
+      padding: 1.45rem;
+      border-radius: 1rem;
+      background: rgba(255,250,243,.76);
+      border: 1px solid rgba(23,19,17,.1);
+    }
+    .visit-card small { color: #7d6c61; font-size: .68rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .visit-card h3 { margin: .55rem 0 .45rem; font-family: var(--serif); font-size: 1.7rem; font-weight: 400; }
+    .visit-card p { margin-bottom: 0; color: #5b514b; font-size: .88rem; }
+    .visit-card a { text-underline-offset: 4px; }
+
+    footer {
+      padding: 2.2rem 1rem 6.2rem;
+      background: #0f0d0c;
+      color: rgba(255,255,255,.64);
+      font-size: .75rem;
+    }
+    .footer-grid { width: min(100%, var(--max)); margin: 0 auto; display: grid; gap: 1.4rem; }
+    .footer-brand { color: #fff; font-family: var(--serif); font-size: 1.35rem; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .footer-links a { text-underline-offset: 4px; }
+    .disclosure { max-width: 46rem; }
+
+    .mobile-cta {
+      position: fixed;
+      z-index: 10;
+      left: .75rem;
+      right: .75rem;
+      bottom: .7rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .5rem;
+      padding: .5rem;
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 1rem;
+      background: rgba(15,13,12,.92);
+      box-shadow: 0 14px 40px rgba(0,0,0,.28);
+      backdrop-filter: blur(14px);
+    }
+    .mobile-cta .btn { min-height: 2.8rem; padding: .6rem .75rem; font-size: .8rem; }
+
+    @media (min-width: 620px) {
+      .quick-strip { grid-template-columns: repeat(3, 1fr); }
+      .quick-item { border-right: 1px solid var(--line); border-bottom: 0; }
+      .quick-item:last-child { border-right: 0; }
+      .hero-meta { grid-template-columns: auto auto; justify-content: start; gap: 1.5rem; }
+      .highlights { grid-template-columns: repeat(3, 1fr); }
+      .highlight-card:nth-child(2) { transform: translateY(1.5rem); }
+      .visit-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 860px) {
+      .nav-links { display: flex; }
+      .hero, .hero-inner { min-height: 820px; }
+      .hero-inner { align-items: center; padding-top: 11rem; padding-bottom: 5rem; }
+      .hero-media { background-position: center; }
+      .section { padding-top: 8rem; padding-bottom: 8rem; }
+      .section-head { grid-template-columns: minmax(0, 1fr) minmax(18rem, .65fr); align-items: end; }
+      .menu-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 3rem; }
+      .story-grid { grid-template-columns: 1.05fr .95fr; gap: 5rem; }
+      .visit-grid { grid-template-columns: 1.25fr .75fr .75fr; }
+      .footer-grid { grid-template-columns: .6fr 1.4fr; }
+      .mobile-cta { display: none; }
+      footer { padding-bottom: 2.5rem; }
+    }
+
+    @media (max-width: 859px) {
+      .hero-media::before {
+        background: linear-gradient(0deg, rgba(10,8,7,.93) 0%, rgba(10,8,7,.58) 58%, rgba(10,8,7,.28) 100%);
+      }
+      .hero-media { background-position: 67% center; }
+      .hero-copy { width: 100%; }
+      .image-note { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Hondo Sushi",
+    "url": "https://www.hondosushi.co.uk/",
+    "telephone": "+44 1225 920420",
+    "email": "info@hondosushi.co.uk",
+    "servesCuisine": "Japanese",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "8-9 St James's Parade",
+      "addressLocality": "Bath",
+      "postalCode": "BA1 1UL",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "12:00",
+      "closes": "22:00"
+    }],
+    "menu": "https://www.hondosushi.co.uk/menu.php"
+  }
+  </script>
+</head>
+<body>
+  <div class="concept-bar">Concept preview · not the official Hondo Sushi website</div>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Hondo Sushi concept preview home">
+        <span class="brand-mark">HS</span>
+        Hondo Sushi
+      </a>
+      <div class="nav-links">
+        <a href="#menu">Menu highlights</a>
+        <a href="#about">About</a>
+        <a href="#visit">Visit</a>
+        <a href="tel:01225920420">Call 01225 920420</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" role="img" aria-label="Original concept image of Japanese sushi, ramen and tea in a warm dining setting"></div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Japanese restaurant · central Bath</p>
+          <h1 id="hero-title">Sushi made for the moment.</h1>
+          <p class="hero-lede">Hand-made sushi, ramen, donburi and bento in the centre of Bath — with the menu, directions and table enquiries easy to reach.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="https://www.hondosushi.co.uk/menu.php" target="_blank" rel="noopener noreferrer">View the published menu <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-ghost" href="tel:01225920420">Call to book</a>
+          </div>
+          <div class="hero-meta">
+            <span>Open daily · 12pm–10pm</span>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Hondo%20Sushi%208-9%20St%20James%27s%20Parade%20Bath%20BA1%201UL" target="_blank" rel="noopener noreferrer">8–9 St James's Parade, BA1 1UL</a>
+          </div>
+        </div>
+      </div>
+      <span class="image-note">Concept imagery for preview only</span>
+    </section>
+
+    <div class="quick-strip" aria-label="Quick actions">
+      <a class="quick-item" href="https://www.hondosushi.co.uk/menu.php" target="_blank" rel="noopener noreferrer">
+        <span class="quick-icon" aria-hidden="true">01</span>
+        <span><small>Choose</small><strong>View the published menu</strong></span>
+      </a>
+      <a class="quick-item" href="tel:01225920420">
+        <span class="quick-icon" aria-hidden="true">02</span>
+        <span><small>Reserve</small><strong>Call 01225 920420</strong></span>
+      </a>
+      <a class="quick-item" href="https://www.google.com/maps/search/?api=1&amp;query=Hondo%20Sushi%208-9%20St%20James%27s%20Parade%20Bath%20BA1%201UL" target="_blank" rel="noopener noreferrer">
+        <span class="quick-icon" aria-hidden="true">03</span>
+        <span><small>Find us</small><strong>Get directions</strong></span>
+      </a>
+    </div>
+
+    <section class="section" aria-labelledby="highlights-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">What to expect</p>
+            <h2 id="highlights-title">Japanese favourites, your way.</h2>
+          </div>
+          <p class="section-intro">From hand-made sushi to warming bowls and generous lunch options, Hondo brings a broad Japanese menu to the heart of Bath.</p>
+        </div>
+        <div class="highlights">
+          <article class="highlight-card">
+            <span class="dish-symbol" aria-hidden="true">○</span>
+            <span class="card-no">01 · HAND-MADE</span>
+            <h3>Sushi</h3>
+            <p>Nigiri, maki and more, with the full current selection available through Hondo's official menu.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="dish-symbol" aria-hidden="true">◡</span>
+            <span class="card-no">02 · WARMING</span>
+            <h3>Ramen</h3>
+            <p>A comforting hot-food choice alongside the restaurant's wider sushi menu.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="dish-symbol" aria-hidden="true">□</span>
+            <span class="card-no">03 · COMPLETE</span>
+            <h3>Donburi &amp; bento</h3>
+            <p>Rice bowls and bento boxes for a straightforward lunch or relaxed evening meal.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu" aria-labelledby="menu-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">A small menu glimpse</p>
+            <h2 id="menu-title">A little something to start.</h2>
+          </div>
+          <p class="section-intro">These items appear in Hondo's published website menu. For today's choices, allergens and prices, please use the official menu or speak to the team.</p>
+        </div>
+        <div class="menu-list">
+          <article class="menu-row"><span>01</span><div><h3>Chicken Karaage</h3><p>Published menu item · details may change</p></div></article>
+          <article class="menu-row"><span>02</span><div><h3>Prawn Tempura</h3><p>Published menu item · details may change</p></div></article>
+          <article class="menu-row"><span>03</span><div><h3>Miso Soup</h3><p>Published menu item · details may change</p></div></article>
+          <article class="menu-row"><span>04</span><div><h3>Agedashi Tofu</h3><p>Published menu item · details may change</p></div></article>
+        </div>
+        <div class="menu-action">
+          <a class="btn btn-primary" href="https://www.hondosushi.co.uk/menu.php" target="_blank" rel="noopener noreferrer">Open the published menu <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap story-grid">
+        <div class="story-mark" aria-hidden="true"></div>
+        <div class="story-copy">
+          <p class="kicker">Hondo in Bath</p>
+          <h2 id="about-title">Sushi and hot dishes, under one roof.</h2>
+          <p>Hondo Sushi is a Japanese restaurant in central Bath, serving hand-made sushi alongside donburi, bento boxes and ramen.</p>
+          <p>This concept keeps the experience simple: see the current menu, call the restaurant, or find the door — without hunting through different pages.</p>
+          <div class="fact-line">
+            <div class="fact"><strong>For current dishes:</strong> use Hondo's official menu.</div>
+            <div class="fact"><strong>For a table:</strong> call the restaurant or use its existing request form.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Plan your visit</p>
+            <h2 id="visit-title">Central Bath, easy to find.</h2>
+          </div>
+          <p class="section-intro">Check the latest information with the restaurant before travelling, especially on public holidays.</p>
+        </div>
+        <div class="visit-grid">
+          <article class="visit-card">
+            <small>Address</small>
+            <h3>8–9 St James's Parade</h3>
+            <p>Bath BA1 1UL<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Hondo%20Sushi%208-9%20St%20James%27s%20Parade%20Bath%20BA1%201UL" target="_blank" rel="noopener noreferrer">Open directions</a></p>
+          </article>
+          <article class="visit-card">
+            <small>Opening hours</small>
+            <h3>Daily</h3>
+            <p>12pm–10pm<br>As published on the official website.</p>
+          </article>
+          <article class="visit-card">
+            <small>Table enquiries</small>
+            <h3>Call the team</h3>
+            <p><a href="tel:01225920420">01225 920420</a><br><a href="https://www.hondosushi.co.uk/#reservation" target="_blank" rel="noopener noreferrer">Use the existing request form</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Hondo Sushi</div>
+        <div class="footer-links">
+          <a href="https://www.hondosushi.co.uk/" target="_blank" rel="noopener noreferrer">Current website</a>
+          <a href="https://www.facebook.com/hondosushi" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="mailto:info@hondosushi.co.uk">Email</a>
+        </div>
+      </div>
+      <div class="disclosure">Concept preview created for demonstration purposes. This is not Hondo Sushi's official website. The hero visual is original concept imagery, not a photograph of Hondo Sushi's food or premises. Business details are based on public information and should be confirmed by the restaurant before any official use.</div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Mobile quick actions">
+    <a class="btn btn-primary" href="https://www.hondosushi.co.uk/menu.php" target="_blank" rel="noopener noreferrer">View menu</a>
+    <a class="btn btn-ghost" href="tel:01225920420">Call to book</a>
+  </div>
+</body>
+</html>
